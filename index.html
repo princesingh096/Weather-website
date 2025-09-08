@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Prediction App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+            <p>Get accurate weather predictions for any location</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="locationInput" placeholder="Enter city name..." autocomplete="off">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+                <button id="currentLocationBtn" title="Use current location"><i class="fas fa-location-arrow"></i></button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="errorText"></span>
+        </div>
+
+        <div class="weather-container" id="weatherContainer">
+            <!-- Current Weather -->
+            <div class="current-weather">
+                <div class="current-info">
+                    <div class="location">
+                        <h2 id="currentLocation"></h2>
+                        <p id="currentDate"></p>
+                    </div>
+                    <div class="temperature">
+                        <span id="currentTemp"></span>
+                        <div class="weather-icon">
+                            <img id="currentIcon" src="" alt="Weather Icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-description">
+                    <p id="currentDescription"></p>
+                    <div class="weather-details">
+                        <div class="detail">
+                            <i class="fas fa-eye"></i>
+                            <span>Feels like</span>
+                            <span id="feelsLike"></span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-tint"></i>
+                            <span>Humidity</span>
+                            <span id="humidity"></span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind</span>
+                            <span id="windSpeed"></span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-thermometer-half"></i>
+                            <span>Pressure</span>
+                            <span id="pressure"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hourly Forecast -->
+            <div class="forecast-section">
+                <h3><i class="fas fa-clock"></i> Hourly Forecast</h3>
+                <div class="hourly-forecast" id="hourlyForecast">
+                    <!-- Hourly items will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- 5-Day Forecast -->
+            <div class="forecast-section">
+                <h3><i class="fas fa-calendar-alt"></i> 5-Day Forecast</h3>
+                <div class="daily-forecast" id="dailyForecast">
+                    <!-- Daily items will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Weather Map -->
+            <div class="forecast-section">
+                <h3><i class="fas fa-map"></i> Weather Map</h3>
+                <div class="weather-map">
+                    <p>Interactive weather map would be integrated here with a mapping service.</p>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Weather Map Integration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 Weather Prediction App. Data provided by OpenWeatherMap API.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
